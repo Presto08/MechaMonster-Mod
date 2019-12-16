@@ -16,7 +16,7 @@ namespace MechaMonsters.Tiles
 			Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
 			Main.tileValue[Type] = 410; // Metal Detector value, see https://terraria.gamepedia.com/Metal_Detector
 			Main.tileShine2[Type] = true; // Modifies the draw color slightly.
-			Main.tileShine[Type] = 627; // How often tiny dust appear off this tile. Larger is less frequently
+			Main.tileShine[Type] = 219; // How often tiny dust appear off this tile. Larger is less frequently
 			Main.tileMergeDirt[Type] = true;
 			Main.tileSolid[Type] = true;
 			Main.tileBlockLight[Type] = true;
@@ -35,9 +35,9 @@ namespace MechaMonsters.Tiles
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
-            r = 0.5f;
-            g = 0.5f;
-            b = 0.5f;
+            r = 0.886f;
+            g = 0f;
+            b = 0.482f;
         }
     } 
 }
