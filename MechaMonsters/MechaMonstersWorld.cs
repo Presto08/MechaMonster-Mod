@@ -20,29 +20,25 @@ namespace MechaMonsters
     {
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
-            // Because world generation is like layering several images ontop of each other, we need to do some steps between the original world generation steps.
-
-            // The first step is an Ore. Most vanilla ores are generated in a step called "Shinies", so for maximum compatibility, we will also do this.
-            // First, we find out which step "Shinies" is.
-            int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
-            if (ShiniesIndex != -1)
+            int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
+            if (shiniesIndex == -1)
             {
-                // Next, we insert our step directly after the original "Shinies" step. 
-                // ExampleModOres is a method seen below.
-                tasks.Insert(ShiniesIndex + 1, new PassLegacy("Ancient Tablet Ores", GenAncientTablets));
+                return;
             }
+
+            tasks.Insert(shiniesIndex + 4, new PassLegacy("Generating Ancinet Tablets", GenAncientTablets));
         }
 
         private void GenAncientTablets(GenerationProgress progress)
         {
-            progress.Message = "Generating ancient tablets";
+            progress.Message = "Generating Ancient Tablets";
 
             for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
             {
-                int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-                int y = WorldGen.genRand.Next((int)WorldGen.rockLayer, Main.maxTilesY);
+                int i2 = WorldGen.genRand.Next(0, Main.maxTilesX);
+                int j2 = WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .45f));
 
-                WorldGen.TileRunner(x, y, (double)WorldGen.genRand.Next(3, 6), TileType<AncientTabletOre>(), false, 0f, 0f, false, true);
+                WorldGen.OreRunner(i2, j2, WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(3, 8), (ushort)mod.TileType("AncientTabletOre"));
             }
         }
     }
