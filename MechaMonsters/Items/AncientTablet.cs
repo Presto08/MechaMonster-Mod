@@ -12,11 +12,11 @@ namespace MechaMonsters.Items
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 1;
-			item.width = 25;
-			item.height = 50;
-			item.value = 252525;
-			item.rare = 5;
-		}
+            item.width = 25;
+            item.height = 50;
+            item.value = 252525;
+            item.rare = 5;
+            item.maxStack = 99;
+        }
 	}
 }
