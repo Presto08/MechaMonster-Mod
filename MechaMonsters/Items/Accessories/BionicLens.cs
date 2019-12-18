@@ -10,7 +10,7 @@ namespace MechaMonsters.Items.Accessories
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bionic Lens");
-			Tooltip.SetDefault("Bionic advancement from a time-travelling zombie. Increases attack damage for a price...");
+			Tooltip.SetDefault("Bionic advancement from a time-travelling zombie. Increases defense for a price...");
 		}
 		public override void SetDefaults()
 		{

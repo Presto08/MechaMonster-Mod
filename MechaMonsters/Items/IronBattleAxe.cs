@@ -8,7 +8,7 @@ namespace MechaMonsters.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Iron Battle Axe");
-			Tooltip.SetDefault("Yes it can kill mobs, no it can't chop trees.")
+            Tooltip.SetDefault("Yes it can kill mobs, no it can't chop trees.");
 		}
 		public override void SetDefaults()
 		{

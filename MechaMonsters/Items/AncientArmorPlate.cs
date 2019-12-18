@@ -22,7 +22,7 @@ namespace MechaMonsters.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(Mod.ItemType("AncientTablet"), 2);
+            recipe.AddIngredient(mod.ItemType("AncientTablet"), 2);
             recipe.AddIngredient(ItemID.IronBar, 5);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);

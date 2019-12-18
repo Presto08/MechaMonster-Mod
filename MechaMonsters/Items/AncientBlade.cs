@@ -8,7 +8,7 @@ namespace MechaMonsters.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ancient Blade");
-			Tooltip.SetDefault("You know, just stick a tablet in everything. It's ought to work!")
+            Tooltip.SetDefault("You know, just stick a tablet in everything. It's ought to work!");
 		}
 		public override void SetDefaults()
 		{
@@ -29,7 +29,7 @@ namespace MechaMonsters.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(Mod.ItemID.AncientTablet, 2);
+            recipe.AddIngredient(mod.ItemType("AncientTablet"), 2);
             recipe.AddIngredient(ItemID.IronBar, 5);
             recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

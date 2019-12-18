@@ -23,10 +23,10 @@ namespace MechaMonsters.Tiles
 
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Ancient Tablet Ore");
-			AddMapEntry(new Color(226, 0, 123), name);
+			AddMapEntry(new Color(56, 30, 5), name);
 
 			dustType = 84;
-			drop = ModContent.ItemType<Items.Placeable.AncientTabletOre>();
+			drop = ModContent.ItemType<Items.AncientTablet>();
 			soundType = 21;
 			soundStyle = 1;
 			//mineResist = 4f;

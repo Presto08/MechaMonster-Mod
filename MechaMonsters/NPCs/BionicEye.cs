@@ -18,8 +18,8 @@ namespace MechaMonsters.NPCs
             npc.damage = 12;
             npc.defense = 10;
             npc.lifeMax = 50;
-            npc.HitSound = SoundID.NPCHit2;
-            npc.DeathSound = SoundID.NPCDeath2;
+            npc.HitSound = SoundID.NPCHit4;
+            npc.DeathSound = SoundID.NPCDeath14;
             npc.value = 150f;
             npc.knockBackResist = 0.25f;
             npc.aiStyle = 2;
