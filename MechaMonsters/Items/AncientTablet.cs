@@ -7,7 +7,7 @@ namespace MechaMonsters.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("AncientTablet");
+			DisplayName.SetDefault("Ancient Tablet");
 			Tooltip.SetDefault("It says something on it, but you can't read it.");
 		}
 		public override void SetDefaults()
