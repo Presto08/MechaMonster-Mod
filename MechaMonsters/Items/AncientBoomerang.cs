@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using MechaMonsters.RecipeUtils;
 
 namespace MechaMonsters.Items
 {
@@ -30,14 +31,15 @@ namespace MechaMonsters.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 6);
-            recipe.AddIngredient(ItemID.IronBar, 5);
-			recipe.AddIngredient(ItemID.Gel, 30);
-			recipe.AddIngredient(ItemID.BottledHoney, 1);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			int[,] ingredients = new int[,]
+			{
+				{ItemID.Wood, 6},
+				{ItemID.IronBar, 5},
+				{ItemID.Gel, 30},
+				{ItemID.BottledHoney, 1 }
+			};
+
+			RecipeUtils.QuickRecipe(mod, this, ingredients, TileID.Anvils);
 		}
 	}
 }
