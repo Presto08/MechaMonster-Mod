@@ -14,7 +14,7 @@ namespace MechaMonsters.Items
 		public override void SetDefaults()
 		{
 			item.damage = 25;
-			item.throw = true;
+			item.thrown = true;
 			item.noMelee = true;
 			item.channel = true;
 			item.width = 50;

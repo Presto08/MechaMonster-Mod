@@ -38,8 +38,8 @@ namespace MechaMonsters.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)   //Return a value between 0 and 1
         {
-            return SpawnCondition.OverworldNightMonster.Chance;
-		}
-        
+            return Main.dayTime ? 0f : .03f;
+        }
+
     }
 }

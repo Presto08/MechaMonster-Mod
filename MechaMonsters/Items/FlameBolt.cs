@@ -8,13 +8,13 @@ namespace MechaMonsters.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Flare Bolt");
-            Tooltip.SetDefault("-Mage Class-");
+            Tooltip.SetDefault("For Ages 10+");
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 25;
+			item.damage = 35;
 			item.magic = true;
-			item.mana = 14;
+			item.mana = 10;
 			item.width = 100;
 			item.height = 200;
 			item.useTime = 25;
