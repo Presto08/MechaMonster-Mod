@@ -1,6 +1,6 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using MechaMonsters.RecipeUtils;
 
 namespace MechaMonsters.Items
 {
@@ -14,32 +14,45 @@ namespace MechaMonsters.Items
 		public override void SetDefaults()
 		{
 			item.damage = 25;
-			item.ranged = true;
+			item.throw = true;
+			item.noMelee = true;
+			item.channel = true;
 			item.width = 50;
 			item.height = 100;
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 3;
-			item.shootSpeed = 5.5f;
-			item.knockBack = 2;
+			item.shootSpeed = 8.5f;
+			item.knockBack = 4;
 			item.value = 140;
-			item.rare = 1;
+			item.rare = 3;
 			item.shoot = mod.ProjectileType("AncientBoomerang");
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 		}
 
+		public override bool CanUseItem(Player player)	//Restricts throwing to one boomerang at a time
+		{
+			for (int i = 0; i < 1000; ++i)
+			{
+				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
 		public override void AddRecipes()
 		{
-			int[,] ingredients = new int[,]
-			{
-				{ItemID.Wood, 6},
-				{ItemID.IronBar, 5},
-				{ItemID.Gel, 30},
-				{ItemID.BottledHoney, 1 }
-			};
+			ModRecipe recipe = new ModRecipe(mod);
 
-			RecipeUtils.QuickRecipe(mod, this, ingredients, TileID.Anvils);
+			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
+			recipe.AddIngredient(mod.ItemType("AncientTablet"), 3);
+			recipe.AddIngredient(mod.ItemType("AncientTabletBar"), 5);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

@@ -8,7 +8,7 @@ namespace MechaMonsters.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Iron Dagger");
-            Tooltip.SetDefault("-Light Melee Class-");	//Test
+            Tooltip.SetDefault("-Light Melee Class-");
 		}
 		public override void SetDefaults()
 		{
