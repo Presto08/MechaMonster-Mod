@@ -20,7 +20,7 @@ namespace MechaMonsters.Projectiles
 			projectile.friendly = true;
 			projectile.ranged = true;
 			projectile.maxPenetrate = 3;
-			aiType = 27;
+			aiType = 16;
 		}
 
 		// Additional hooks/methods here.

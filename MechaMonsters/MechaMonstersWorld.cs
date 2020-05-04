@@ -18,8 +18,21 @@ namespace MechaMonsters
 {
     class MechaMonstersWorld : ModWorld
     {
+        private string genpasses = "";
+        private ulong lineCount = 1;
+
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
+            /*foreach (GenPass gp in tasks)
+            {
+                genpasses += gp.Name + ", ";
+                if (genpasses.Length - (int)(70*lineCount) > 0)
+                {
+                    genpasses += "\n";
+                    lineCount = lineCount + 1;
+                }
+            }*/
+
             int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
             if (shiniesIndex == -1)
             {
@@ -31,7 +44,12 @@ namespace MechaMonsters
 
         private void GenAncientTablets(GenerationProgress progress)
         {
-            progress.Message = "Generating Ancient Tablets";
+            progress.Message = genpasses;//"Generating Ancient Tablets";
+
+            /*for (long g = 0; g < long.MaxValue; g++)
+            {
+                lineCount = (lineCount + 2) / 2;
+            }*/
 
             for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
             {

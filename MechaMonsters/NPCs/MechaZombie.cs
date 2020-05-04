@@ -52,7 +52,7 @@ namespace MechaMonsters.NPCs
         {
             if (!Main.dayTime)
             {
-                return .04f;
+                return .05f;
             }
             else
             {
